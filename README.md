@@ -90,7 +90,7 @@ npm install
 # 2. Start the Vite React hot-reload server
 npm run dev
 ```
-Open [http://localhost:5173/](http://localhost:5173/) in your web browser.
+Open [Click Here](https://settlewise-mern.vercel.app/) in your web browser.
 
 ### Running the Express Backend (Optional)
 To run the Node.js backend server with a local MongoDB instance:
