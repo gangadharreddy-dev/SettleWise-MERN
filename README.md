@@ -1,16 +1,61 @@
-# React + Vite
+# SettleWise - Splitwise Clone (MERN)
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A MERN stack expense sharing application inspired by Splitwise.
+This project allows users to create groups, add expenses, split bills,
+track balances, and manage settlements.
 
-Currently, two official plugins are available:
+## ⚠️ Note
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+This is a learning/project clone built to understand full-stack
+development concepts and expense-sharing application architecture.
 
-## React Compiler
+## 🚀 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- User authentication
+- Create expense groups
+- Add and split expenses
+- Track balances
+- Settlement management
+- Expense history
+- Responsive dashboard
 
-## Expanding the Oxlint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+Frontend:
+- React.js + Vite
+- JavaScript
+- CSS / Tailwind CSS
+
+Backend:
+- Node.js
+- Express.js
+
+Database:
+- MongoDB
+
+## 📁 Structure
+
+client/  → React frontend  
+server/  → Express backend API
+
+## ▶️ Run Locally
+
+Frontend:
+npm install
+npm run dev
+
+Backend:
+npm install
+npm start
+
+## 🎯 Purpose
+
+Built as a MERN stack practice project demonstrating:
+- REST APIs
+- Authentication
+- Database design
+- Full-stack development
+
+## 👨‍💻 Author
+
+Gangadhar Reddy
