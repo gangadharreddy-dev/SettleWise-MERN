@@ -3,7 +3,7 @@
 <img width="2940" height="1662" alt="image" src="https://github.com/user-attachments/assets/e7df9e2e-7564-4e5a-b943-73e03d0137ec" />
 
 
-⚡ **Live Demo**: (Click Here)[https://settlewise-mern.vercel.app](https://settlewise-mern.vercel.app)
+⚡ **Live Demo**: [https://settlewise-mern.vercel.app](https://settlewise-mern.vercel.app)
 
 SettleWise is a high-fidelity, premium web application inspired by **Splitwise & SettleUp** that facilitates seamless expense tracking, group bill splitting, and debt settlements. 
 
