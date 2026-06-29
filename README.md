@@ -59,6 +59,98 @@ SettleWise-MERN/
 
 ---
 
+## 🏗️ System Architecture
+
+### Overall Application Architecture
+
+```mermaid
+graph TB
+    subgraph Client["🌐 Client (Browser)"]
+        UI["React UI Components\nDashboard · GroupDetail · ExpenseForm"]
+        DS["dataService.js\nLocalStorage API Layer"]
+        ALGO["debtSimplifier.js\nGreedy Min-Max Algorithm"]
+        UI --> DS
+        UI --> ALGO
+    end
+
+    subgraph Frontend["⚡ Frontend (Vite + React)"]
+        APP["App.jsx\nState Manager & Router"]
+        COMP["Components Layer\nDashboard · GroupDetail · ExpenseForm · PrepDashboard"]
+        SVC["Services Layer\ndataService.js"]
+        UTIL["Utils Layer\ndebtSimplifier.js"]
+        APP --> COMP
+        APP --> SVC
+        COMP --> UTIL
+    end
+
+    subgraph Backend["🖥️ Backend (Node.js + Express)"]
+        API["Express REST API\nserver.js"]
+        ROUTES["API Routes\n/api/groups · /api/expenses · /api/settlements"]
+        MODELS["Mongoose Models\nUser · Group · Expense · Settlement"]
+        API --> ROUTES
+        ROUTES --> MODELS
+    end
+
+    subgraph Database["🗄️ Database (MongoDB)"]
+        USERS[("Users Collection")]
+        GROUPS[("Groups Collection")]
+        EXPENSES[("Expenses Collection")]
+        SETTLEMENTS[("Settlements Collection")]
+    end
+
+    subgraph Deploy["☁️ Deployment"]
+        VERCEL["Vercel\nFrontend Hosting"]
+        RENDER["Render\nBackend Hosting"]
+        ATLAS["MongoDB Atlas\nCloud Database"]
+    end
+
+    Frontend -->|"HTTP Requests (optional)"| Backend
+    MODELS --> Database
+    Frontend --> VERCEL
+    Backend --> RENDER
+    Database --> ATLAS
+```
+
+---
+
+### Data Flow — Adding & Settling an Expense
+
+```mermaid
+sequenceDiagram
+    actor User
+    participant UI as React UI
+    participant DS as dataService.js
+    participant LS as localStorage
+    participant ALGO as debtSimplifier.js
+
+    User->>UI: Fills ExpenseForm (title, amount, paidBy, splitType)
+    UI->>UI: Validates split amounts / percentages
+    UI->>DS: saveExpense(expenseData)
+    DS->>LS: Write updated expenses array
+    DS-->>UI: Returns saved expense
+
+    UI->>DS: getExpenses(groupId)
+    DS->>LS: Read expenses for group
+    DS-->>UI: Returns expense list
+
+    UI->>ALGO: calculateNetBalances(members, expenses)
+    ALGO-->>UI: Returns { Rahul: +3000, Priya: -1200, Amit: -1800 }
+
+    UI->>ALGO: simplifyDebts(netBalances)
+    ALGO->>ALGO: Sort Debtors & Creditors
+    ALGO->>ALGO: Greedy Min-Max pairing loop
+    ALGO-->>UI: Returns simplified transactions list
+
+    UI-->>User: Shows settlement suggestions (e.g. "Priya pays Rahul ₹1200")
+
+    User->>UI: Clicks "Record Payment"
+    UI->>DS: recordSettlement({ from, to, amount })
+    DS->>LS: Persist settlement record
+    UI-->>User: 🎉 Confetti animation + updated balance view
+```
+
+---
+
 ## 🧮 Debt Simplification Algorithm
 
 SettleWise solves the multi-party transfer loop problem (e.g. A owes B ₹500, B owes C ₹500 $\rightarrow$ A pays C ₹500 directly) using a greedy Min-Max balance matching flow.
