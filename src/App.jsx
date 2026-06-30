@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { LayoutDashboard, Users, BookOpen, RotateCcw, AlertTriangle } from 'lucide-react';
+import { LayoutDashboard, Users, BookOpen, RotateCcw, AlertTriangle, BarChart3 } from 'lucide-react';
 import { dataService } from './services/dataService';
 import Dashboard from './components/Dashboard';
 import GroupDetail from './components/GroupDetail';
 import PrepDashboard from './components/PrepDashboard';
+import Analytics from './components/Analytics';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('dashboard'); // dashboard, prep
@@ -99,6 +100,13 @@ export default function App() {
               <span>Dashboard</span>
             </button>
             <button 
+              className={`nav-item ${activeTab === 'analytics' ? 'active' : ''}`}
+              onClick={() => { setActiveTab('analytics'); setActiveGroupId(null); }}
+            >
+              <BarChart3 size={16} />
+              <span>Analytics</span>
+            </button>
+            <button 
               className={`nav-item ${activeTab === 'prep' ? 'active' : ''}`}
               onClick={() => { setActiveTab('prep'); setActiveGroupId(null); }}
             >
@@ -144,6 +152,15 @@ export default function App() {
             onDeleteExpense={handleDeleteExpense}
             onEditExpense={handleAddExpense} // uses same save method
             onRecordSettlement={handleRecordSettlement}
+          />
+        )}
+
+        {activeTab === 'analytics' && (
+          <Analytics
+            groups={groups}
+            allExpenses={expenses}
+            allSettlements={settlements}
+            activeUser={activeUser}
           />
         )}
 

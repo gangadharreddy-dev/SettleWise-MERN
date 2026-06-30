@@ -1482,3 +1482,479 @@ code {
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.16);
 }
+
+/* =============================================
+   ANALYTICS / MONTHLY REPORT STYLES
+   ============================================= */
+
+.analytics-container {
+  max-width: 100%;
+}
+
+.analytics-header {
+  margin-bottom: 2rem;
+}
+
+.analytics-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.analytics-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.analytics-title h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.month-nav-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.month-navigator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--panel-bg-light);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius-sm);
+  padding: 0.25rem 0.5rem;
+}
+
+.month-display {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  color: var(--text-primary);
+}
+
+.month-label {
+  font-size: 1rem;
+  font-weight: 600;
+  min-width: 140px;
+  text-align: center;
+}
+
+.group-filter {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-muted);
+}
+
+.filter-select {
+  background: var(--panel-bg-light);
+  border: 1px solid var(--panel-border);
+  color: var(--text-primary);
+  padding: 0.45rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  cursor: pointer;
+  outline: none;
+  min-width: 150px;
+}
+
+.filter-select option {
+  background-color: var(--bg-subtle);
+}
+
+/* Stats Grid */
+.analytics-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.analytics-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.stat-sub {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.1rem;
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+/* Analytics Empty State */
+.analytics-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
+  gap: 0.75rem;
+}
+
+.analytics-empty h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.analytics-empty p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  max-width: 400px;
+}
+
+/* Analytics Body Grid */
+.analytics-body-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 2rem;
+}
+
+@media (max-width: 900px) {
+  .analytics-body-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.analytics-section {
+  margin-bottom: 1.5rem;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+  color: var(--text-primary);
+}
+
+/* Daily Spending Chart */
+.daily-chart {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.chart-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 160px;
+  padding-bottom: 1.5rem;
+  position: relative;
+}
+
+.chart-bar-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 12px;
+  height: 100%;
+  position: relative;
+}
+
+.chart-bar-track {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.chart-bar-fill {
+  width: 100%;
+  background: linear-gradient(180deg, var(--primary), rgba(6, 182, 212, 0.3));
+  border-radius: 3px 3px 0 0;
+  transition: height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  min-width: 6px;
+}
+
+.chart-bar-label {
+  position: absolute;
+  bottom: -1.25rem;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+}
+
+/* Category Breakdown */
+.category-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.category-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.category-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.category-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.category-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.category-count {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-left: auto;
+}
+
+.category-bar-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.category-bar-track {
+  width: 100%;
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.04);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.category-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gradient-bar {
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+}
+
+.category-values {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.category-amount {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.category-pct {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Group Breakdown */
+.group-breakdown-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.group-breakdown-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.gbi-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gbi-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.gbi-amount {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.gbi-meta {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* Top Spenders */
+.top-spenders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.spender-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0.75rem;
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius-sm);
+}
+
+.spender-rank {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: #020617;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.spender-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.spender-amount {
+  margin-left: auto;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Monthly Expense Log */
+.monthly-expense-log {
+  display: flex;
+  flex-direction: column;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.log-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.log-item:last-child {
+  border-bottom: none;
+}
+
+.log-date {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  min-width: 50px;
+  text-align: center;
+}
+
+.log-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.log-title {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.log-meta {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.log-amount {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.log-amount.settled {
+  color: var(--success);
+}
+
+.settlement-log {
+  background-color: rgba(16, 185, 129, 0.03);
+}
+
+/* Print Styles */
+.print-btn {
+  gap: 0.4rem;
+}
+
+@media print {
+  .app-header,
+  .app-footer,
+  .nav-links,
+  .nav-actions,
+  .print-btn,
+  .month-navigator button {
+    display: none !important;
+  }
+
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  .card,
+  .card.glass {
+    background: #fff !important;
+    border: 1px solid #ddd !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+  }
+
+  .stat-value,
+  .stat-label,
+  .category-name,
+  .spender-name,
+  .log-title,
+  .section-heading,
+  .analytics-title h1,
+  .month-label {
+    color: #000 !important;
+  }
+
+  .stat-value.positive { color: #047857 !important; }
+  .stat-value.negative { color: #be123c !important; }
+
+  .chart-bar-fill {
+    background: #0891b2 !important;
+  }
+
+  .spender-rank {
+    background: #0891b2 !important;
+    color: #fff !important;
+  }
+}
+
