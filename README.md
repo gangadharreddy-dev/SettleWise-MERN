@@ -20,6 +20,15 @@ The application is built as a highly responsive, modern React frontend styled wi
   * **Percentages**: Assign share values based on percentages (validated to sum to exactly 100%).
 * **Greedy Debt Simplification Engine**: Built-in algorithm that reduces multi-party debt transfers into the minimum possible transactions.
 * **Direct Settlement Recording**: Click "Record Payment" to settle debt between users, featuring animated celebratory confetti drops (`canvas-confetti`) on success.
+* **📊 Monthly Report & Analytics**: A full analytics dashboard with:
+  * Month/year navigation and group filter
+  * Summary cards: Total Group Spending, Your Share, You Paid, Net Balance
+  * Daily spending trend bar chart
+  * Category-wise breakdown with color-coded progress bars
+  * Group-wise expense split analysis
+  * Top spenders leaderboard
+  * Chronological expense and settlement log
+  * **Print Report** button for printer-friendly output
 * **Interview Prep Dashboard**: A dedicated tab built into the web app featuring live-rendered Mongoose Schemas, Express controllers code, and explanations of the transaction simplification algorithm to aid in technical interview explanations.
 
 ---
@@ -46,6 +55,7 @@ SettleWise-MERN/
 │   │   ├── Dashboard.jsx      # Overall net balance sheets and group creation
 │   │   ├── GroupDetail.jsx    # Log of expenses, members list, and settleSuggestion panels
 │   │   ├── ExpenseForm.jsx    # Advanced splitting modal with error validators
+│   │   ├── Analytics.jsx      # Monthly report with charts, category breakdown, and print
 │   │   └── PrepDashboard.jsx  # Technical cheat sheet and concept guide
 │   ├── services/
 │   │   └── dataService.js     # LocalStorage state layer with seed data
